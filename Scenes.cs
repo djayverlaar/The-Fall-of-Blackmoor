@@ -112,11 +112,11 @@ namespace The_Fall_of_Blackmoor
             }
             else if (choice == "2")
             {
-                GuardTower();
+                //GuardTower();
             }
             else if (choice == "3")
             {
-                Stables();
+                //Stables();
             }
             else if (choice == "4")
             {
@@ -140,10 +140,79 @@ namespace The_Fall_of_Blackmoor
                 Courtyard();
             }
         }
+        public static void Chapel()
+        {
+            Game.CurrentScene = "chapel";
+
+            Console.Clear();
+
+            Console.WriteLine("CASTLE CHAPEL");
+            Console.WriteLine();
+            Console.WriteLine("The chapel is silent.");
+            Console.WriteLine("Broken candles lie across the stone floor.");
+            Console.WriteLine("A torn letter lies beside the altar.");
+            Console.WriteLine();
+
+            Console.WriteLine("1. Search the altar");
+            Console.WriteLine("2. Read the letter");
+            Console.WriteLine("3. Return to the courtyard");
+            Console.WriteLine("4. Ask for a hint");
+            Console.WriteLine();
+
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                if (!Game.Inventory.Contains("Royal Seal"))
+                {
+                    Game.Inventory.Add("Royal Seal");
+
+                    Console.WriteLine();
+                    Console.WriteLine("You find the Royal Seal of Blackmoor.");
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("There is nothing else here.");
+                }
+
+                Console.ReadLine();
+                Chapel();
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine();
+                Console.WriteLine("The letter says:");
+                Console.WriteLine();
+                Console.WriteLine("\"The castle gates were opened from inside.\"");
+                Console.WriteLine("\"Someone close to the king betrayed Blackmoor.\"");
+
+                Console.ReadLine();
+                Chapel();
+            }
+            else if (choice == "3")
+            {
+                Courtyard();
+            }
+            else if (choice == "4")
+            {
+                Game.ShowHint();
+
+                Console.ReadLine();
+                Chapel();
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
+
+                Console.ReadLine();
+                Chapel();
+            }
+        }
 
 
     }
-    }
-
 }
+
+
 
