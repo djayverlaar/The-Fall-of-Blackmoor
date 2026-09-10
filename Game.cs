@@ -63,5 +63,96 @@ namespace The_Fall_of_Blackmoor
 
             MainMenu();
         }
+
+        public static void ShowHint()
+        {
+            Console.WriteLine();
+            Console.WriteLine("HINT");
+            Console.WriteLine();
+
+            if (CurrentScene == "cellar")
+            {
+                Console.WriteLine("Take useful items before leaving the cellar.");
+            }
+            else if (CurrentScene == "courtyard")
+            {
+                Console.WriteLine("Explore the castle before trying to escape.");
+            }
+            else if (CurrentScene == "chapel")
+            {
+                Console.WriteLine("Search near the altar.");
+            }
+            else if (CurrentScene == "tower")
+            {
+                Console.WriteLine("The guards may have left something useful behind.");
+            }
+            else if (CurrentScene == "stables")
+            {
+                Console.WriteLine("Search the supplies.");
+            }
+            else if (CurrentScene == "gate")
+            {
+                Console.WriteLine("You need something to unlock the gate.");
+            }
+            else if (CurrentScene == "woods")
+            {
+                Console.WriteLine("Think carefully before leaving the wounded knight behind.");
+            }
+            else if (CurrentScene == "watchtower")
+            {
+                Console.WriteLine("Your previous choices may decide the ending.");
+            }
+        }
+
+        public static void ShowInventory()
+        {
+            Console.WriteLine();
+            Console.WriteLine("INVENTORY");
+            Console.WriteLine();
+
+            if (Inventory.Count == 0)
+            {
+                Console.WriteLine("Your inventory is empty.");
+            }
+            else
+            {
+                foreach (string item in Inventory)
+                {
+                    Console.WriteLine("- " + item);
+                }
+            }
+        }
+
+        public static void ShowGoal()
+        {
+            Console.WriteLine();
+            Console.WriteLine("CURRENT GOAL");
+            Console.WriteLine();
+
+            if (CurrentScene == "cellar")
+            {
+                Console.WriteLine("Escape the cellar.");
+            }
+            else if (CurrentScene == "courtyard")
+            {
+                Console.WriteLine("Explore Castle Blackmoor and find a way out.");
+            }
+            else if (CurrentScene == "gate")
+            {
+                Console.WriteLine("Find a way to open the castle gate.");
+            }
+            else if (CurrentScene == "woods")
+            {
+                Console.WriteLine("Discover who betrayed Blackmoor.");
+            }
+            else if (CurrentScene == "watchtower")
+            {
+                Console.WriteLine("Confront the traitor.");
+            }
+            else
+            {
+                Console.WriteLine("Discover what happened to Blackmoor.");
+            }
+        }
     }
 }
