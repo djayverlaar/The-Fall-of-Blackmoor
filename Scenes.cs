@@ -82,7 +82,68 @@ namespace The_Fall_of_Blackmoor
                 Cellar();
             }
         }
+        public static void Courtyard()
+        {
+            Game.CurrentScene = "courtyard";
+
+            Console.Clear();
+
+            Console.WriteLine("CASTLE COURTYARD");
+            Console.WriteLine();
+            Console.WriteLine("You step into the castle courtyard.");
+            Console.WriteLine("Smoke rises above the walls.");
+            Console.WriteLine("The sound of battle can still be heard outside.");
+            Console.WriteLine();
+            Console.WriteLine("You see the chapel, guard tower and stables.");
+            Console.WriteLine();
+
+            Console.WriteLine("1. Go to the chapel");
+            Console.WriteLine("2. Go to the guard tower");
+            Console.WriteLine("3. Go to the stables");
+            Console.WriteLine("4. Show inventory");
+            Console.WriteLine("5. Ask for a hint");
+            Console.WriteLine();
+
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Chapel();
+            }
+            else if (choice == "2")
+            {
+                GuardTower();
+            }
+            else if (choice == "3")
+            {
+                Stables();
+            }
+            else if (choice == "4")
+            {
+                Game.ShowInventory();
+
+                Console.ReadLine();
+                Courtyard();
+            }
+            else if (choice == "5")
+            {
+                Game.ShowHint();
+
+                Console.ReadLine();
+                Courtyard();
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
+
+                Console.ReadLine();
+                Courtyard();
+            }
+        }
+
+
+    }
     }
 
 }
-}
+
