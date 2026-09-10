@@ -89,6 +89,49 @@ namespace TheFallOfBlackmoor
             Console.WriteLine("Escape Castle Blackmoor and discover who attacked the kingdom.");
         }
 
+        static void ShowHint()
+        {
+            Console.WriteLine();
+            Console.WriteLine("HINT");
+
+            if (currentScene == "cellar")
+            {
+                Console.WriteLine("Take useful items before leaving the cellar.");
+            }
+            else if (currentScene == "courtyard")
+            {
+                Console.WriteLine("Explore the castle before trying to escape.");
+            }
+            else if (currentScene == "chapel")
+            {
+                Console.WriteLine("Search for something connected to the royal family.");
+            }
+            else if (currentScene == "tower")
+            {
+                Console.WriteLine("The guards may have left a key behind.");
+            }
+            else if (currentScene == "stables")
+            {
+                Console.WriteLine("Useful travel equipment may still be here.");
+            }
+            else if (currentScene == "gate")
+            {
+                Console.WriteLine("You need something that can open the castle gate.");
+            }
+            else if (currentScene == "woods")
+            {
+                Console.WriteLine("Think carefully before trusting strangers.");
+            }
+            else if (currentScene == "watchtower")
+            {
+                Console.WriteLine("Your earlier choices may decide the fate of Blackmoor.");
+            }
+            else
+            {
+                Console.WriteLine("Look around carefully.");
+            }
+        }
+
         static void SceneCellar()
         {
             currentScene = "cellar";
@@ -107,7 +150,7 @@ namespace TheFallOfBlackmoor
             Console.WriteLine("1. Take the torch");
             Console.WriteLine("2. Take the rusty sword");
             Console.WriteLine("3. Leave the cellar");
-            Console.WriteLine("4. Show goal");
+            Console.WriteLine("4. Ask for a hint");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -148,7 +191,7 @@ namespace TheFallOfBlackmoor
             }
             else if (choice == "4")
             {
-                ShowGoal();
+                ShowHint();
                 Console.ReadLine();
                 SceneCellar();
             }
