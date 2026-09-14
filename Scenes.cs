@@ -112,8 +112,10 @@ namespace The_Fall_of_Blackmoor
             }
             else if (choice == "2")
             {
-                //GuardTower();
+               GuardTower();
             }
+
+
             else if (choice == "3")
             {
                 //Stables();
@@ -210,8 +212,76 @@ namespace The_Fall_of_Blackmoor
             }
         }
 
+        public static void GuardTower()
+        {
+            Game.CurrentScene = "tower";
+
+            Console.Clear();
+
+            Console.WriteLine("GUARD TOWER");
+            Console.WriteLine();
+            Console.WriteLine("The tower has been abandoned.");
+            Console.WriteLine("A wooden desk stands near the window.");
+            Console.WriteLine();
+
+            Console.WriteLine("1. Search the desk");
+            Console.WriteLine("2. Look outside");
+            Console.WriteLine("3. Return to the courtyard");
+            Console.WriteLine("4. Ask for a hint");
+            Console.WriteLine();
+
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                if (!Game.Inventory.Contains("Gate Key"))
+                {
+                    Game.Inventory.Add("Gate Key");
+
+                    Console.WriteLine();
+                    Console.WriteLine("You find the Castle Gate Key.");
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("The desk is empty.");
+                }
+
+                Console.ReadLine();
+                GuardTower();
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine();
+                Console.WriteLine("Enemy soldiers surround the castle.");
+                Console.WriteLine("The road is blocked, but the forest looks clear.");
+
+                Console.ReadLine();
+                GuardTower();
+            }
+            else if (choice == "3")
+            {
+                Courtyard();
+            }
+            else if (choice == "4")
+            {
+                Game.ShowHint();
+
+                Console.ReadLine();
+                GuardTower();
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
+
+                Console.ReadLine();
+                GuardTower();
+            }
+        }
+
 
     }
+
 }
 
 
