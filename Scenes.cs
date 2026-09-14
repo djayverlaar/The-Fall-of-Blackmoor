@@ -413,6 +413,78 @@ namespace The_Fall_of_Blackmoor
                 CastleGate();
             }
         }
+
+        public static void Woods()
+        {
+            Game.CurrentScene = "woods";
+
+            Console.Clear();
+
+            Console.WriteLine("BLACKMOOR WOODS");
+            Console.WriteLine();
+            Console.WriteLine("The burning castle disappears behind the trees.");
+            Console.WriteLine("Beside the road you find a wounded Blackmoor knight.");
+            Console.WriteLine();
+
+            Console.WriteLine("1. Help the knight");
+            Console.WriteLine("2. Question the knight");
+            Console.WriteLine("3. Ignore him");
+            Console.WriteLine("4. Ask for a hint");
+            Console.WriteLine();
+
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Console.WriteLine();
+                Console.WriteLine("You help the wounded knight.");
+                Console.WriteLine("He tells you that Lord Varrick betrayed the king.");
+
+                if (!Game.Inventory.Contains("Knight Trust"))
+                {
+                    Game.Inventory.Add("Knight Trust");
+                }
+
+                Console.ReadLine();
+
+                Watchtower();
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine();
+                Console.WriteLine("The knight tells you Lord Varrick disappeared before the attack.");
+                Console.WriteLine("He believes Varrick is the traitor.");
+
+                Console.ReadLine();
+
+                Watchtower();
+            }
+            else if (choice == "3")
+            {
+                Console.WriteLine();
+                Console.WriteLine("You leave the knight behind and continue alone.");
+
+                Console.ReadLine();
+
+                Watchtower();
+            }
+            else if (choice == "4")
+            {
+                Game.ShowHint();
+
+                Console.ReadLine();
+
+                Woods();
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
+
+                Console.ReadLine();
+
+                Woods();
+            }
+        }
     }
 
 }
