@@ -118,7 +118,7 @@ namespace The_Fall_of_Blackmoor
 
             else if (choice == "3")
             {
-                //Stables();
+                Stables();
             }
             else if (choice == "4")
             {
@@ -279,7 +279,140 @@ namespace The_Fall_of_Blackmoor
             }
         }
 
+        public static void Stables()
+        {
+            Game.CurrentScene = "stables";
 
+            Console.Clear();
+
+            Console.WriteLine("CASTLE STABLES");
+            Console.WriteLine();
+            Console.WriteLine("The stables smell of hay and smoke.");
+            Console.WriteLine("Most of the horses are gone.");
+            Console.WriteLine("A rope hangs from a wooden post.");
+            Console.WriteLine();
+
+            Console.WriteLine("1. Take the rope");
+            Console.WriteLine("2. Check the horses");
+            Console.WriteLine("3. Go to the castle gate");
+            Console.WriteLine("4. Return to the courtyard");
+            Console.WriteLine();
+
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                if (!Game.Inventory.Contains("Rope"))
+                {
+                    Game.Inventory.Add("Rope");
+
+                    Console.WriteLine();
+                    Console.WriteLine("You take the rope.");
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("You already have the rope.");
+                }
+
+                Console.ReadLine();
+                Stables();
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine();
+                Console.WriteLine("One horse remains, but it is too frightened to ride.");
+
+                Console.ReadLine();
+                Stables();
+            }
+            else if (choice == "3")
+            {
+                CastleGate();
+            }
+            else if (choice == "4")
+            {
+                Courtyard();
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
+
+                Console.ReadLine();
+                Stables();
+            }
+        }
+
+        public static void CastleGate()
+        {
+            Game.CurrentScene = "gate";
+
+            Console.Clear();
+
+            Console.WriteLine("CASTLE GATE");
+            Console.WriteLine();
+            Console.WriteLine("The enormous wooden gate is locked.");
+            Console.WriteLine("Enemy soldiers are getting closer.");
+            Console.WriteLine();
+
+            Console.WriteLine("1. Try to open the gate");
+            Console.WriteLine("2. Show inventory");
+            Console.WriteLine("3. Return to the courtyard");
+            Console.WriteLine("4. Ask for a hint");
+            Console.WriteLine();
+
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                if (Game.Inventory.Contains("Gate Key"))
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("You use the Gate Key.");
+                    Console.WriteLine("The heavy gate slowly opens.");
+                    Console.WriteLine("You escape into the forest.");
+
+                    Console.ReadLine();
+
+                    Woods();
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("The gate is locked.");
+                    Console.WriteLine("You need a key.");
+
+                    Console.ReadLine();
+
+                    CastleGate();
+                }
+            }
+            else if (choice == "2")
+            {
+                Game.ShowInventory();
+
+                Console.ReadLine();
+                CastleGate();
+            }
+            else if (choice == "3")
+            {
+                Courtyard();
+            }
+            else if (choice == "4")
+            {
+                Game.ShowHint();
+
+                Console.ReadLine();
+                CastleGate();
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
+
+                Console.ReadLine();
+                CastleGate();
+            }
+        }
     }
 
 }
