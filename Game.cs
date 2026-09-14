@@ -20,8 +20,9 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("================================");
             Console.WriteLine();
             Console.WriteLine("1. Start Game");
-            Console.WriteLine("2. Instructions");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("2. Load Game");
+            Console.WriteLine("3. Instuctions");
+            Console.WriteLine("4. Exit");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -32,10 +33,14 @@ namespace The_Fall_of_Blackmoor
             }
             else if (choice == "2")
             {
-                ShowInstructions();
+                SaveSystem.LoadGame();
             }
             else if (choice == "3")
             {
+                ShowInstructions();
+            }
+            else if (choice == "4") {
+
                 Console.WriteLine("Goodbye.");
             }
             else

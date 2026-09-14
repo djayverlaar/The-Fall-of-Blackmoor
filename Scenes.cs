@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace The_Fall_of_Blackmoor
 {
     static class Scenes
     {
-
         public static void Cellar()
         {
             Game.CurrentScene = "cellar";
@@ -29,6 +24,7 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("2. Take the rusty sword");
             Console.WriteLine("3. Leave the cellar");
             Console.WriteLine("4. Ask for a hint");
+            Console.WriteLine("5. Save game");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -74,6 +70,13 @@ namespace The_Fall_of_Blackmoor
                 Console.ReadLine();
                 Cellar();
             }
+            else if (choice == "5")
+            {
+                SaveSystem.SaveGame();
+
+                Console.ReadLine();
+                Cellar();
+            }
             else
             {
                 Console.WriteLine("Invalid choice.");
@@ -82,6 +85,7 @@ namespace The_Fall_of_Blackmoor
                 Cellar();
             }
         }
+
         public static void Courtyard()
         {
             Game.CurrentScene = "courtyard";
@@ -102,6 +106,7 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("3. Go to the stables");
             Console.WriteLine("4. Show inventory");
             Console.WriteLine("5. Ask for a hint");
+            Console.WriteLine("6. Save game");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -112,10 +117,8 @@ namespace The_Fall_of_Blackmoor
             }
             else if (choice == "2")
             {
-               GuardTower();
+                GuardTower();
             }
-
-
             else if (choice == "3")
             {
                 Stables();
@@ -134,6 +137,13 @@ namespace The_Fall_of_Blackmoor
                 Console.ReadLine();
                 Courtyard();
             }
+            else if (choice == "6")
+            {
+                SaveSystem.SaveGame();
+
+                Console.ReadLine();
+                Courtyard();
+            }
             else
             {
                 Console.WriteLine("Invalid choice.");
@@ -142,6 +152,7 @@ namespace The_Fall_of_Blackmoor
                 Courtyard();
             }
         }
+
         public static void Chapel()
         {
             Game.CurrentScene = "chapel";
@@ -159,6 +170,7 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("2. Read the letter");
             Console.WriteLine("3. Return to the courtyard");
             Console.WriteLine("4. Ask for a hint");
+            Console.WriteLine("5. Save game");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -203,6 +215,13 @@ namespace The_Fall_of_Blackmoor
                 Console.ReadLine();
                 Chapel();
             }
+            else if (choice == "5")
+            {
+                SaveSystem.SaveGame();
+
+                Console.ReadLine();
+                Chapel();
+            }
             else
             {
                 Console.WriteLine("Invalid choice.");
@@ -228,6 +247,7 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("2. Look outside");
             Console.WriteLine("3. Return to the courtyard");
             Console.WriteLine("4. Ask for a hint");
+            Console.WriteLine("5. Save game");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -270,6 +290,13 @@ namespace The_Fall_of_Blackmoor
                 Console.ReadLine();
                 GuardTower();
             }
+            else if (choice == "5")
+            {
+                SaveSystem.SaveGame();
+
+                Console.ReadLine();
+                GuardTower();
+            }
             else
             {
                 Console.WriteLine("Invalid choice.");
@@ -296,6 +323,8 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("2. Check the horses");
             Console.WriteLine("3. Go to the castle gate");
             Console.WriteLine("4. Return to the courtyard");
+            Console.WriteLine("5. Ask for a hint");
+            Console.WriteLine("6. Save game");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -334,6 +363,20 @@ namespace The_Fall_of_Blackmoor
             {
                 Courtyard();
             }
+            else if (choice == "5")
+            {
+                Game.ShowHint();
+
+                Console.ReadLine();
+                Stables();
+            }
+            else if (choice == "6")
+            {
+                SaveSystem.SaveGame();
+
+                Console.ReadLine();
+                Stables();
+            }
             else
             {
                 Console.WriteLine("Invalid choice.");
@@ -359,6 +402,7 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("2. Show inventory");
             Console.WriteLine("3. Return to the courtyard");
             Console.WriteLine("4. Ask for a hint");
+            Console.WriteLine("5. Save game");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -405,6 +449,13 @@ namespace The_Fall_of_Blackmoor
                 Console.ReadLine();
                 CastleGate();
             }
+            else if (choice == "5")
+            {
+                SaveSystem.SaveGame();
+
+                Console.ReadLine();
+                CastleGate();
+            }
             else
             {
                 Console.WriteLine("Invalid choice.");
@@ -430,6 +481,7 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("2. Question the knight");
             Console.WriteLine("3. Ignore him");
             Console.WriteLine("4. Ask for a hint");
+            Console.WriteLine("5. Save game");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -476,6 +528,14 @@ namespace The_Fall_of_Blackmoor
 
                 Woods();
             }
+            else if (choice == "5")
+            {
+                SaveSystem.SaveGame();
+
+                Console.ReadLine();
+
+                Woods();
+            }
             else
             {
                 Console.WriteLine("Invalid choice.");
@@ -504,6 +564,7 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("2. Expose Varrick");
             Console.WriteLine("3. Leave Blackmoor");
             Console.WriteLine("4. Ask for a hint");
+            Console.WriteLine("5. Save game");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -566,6 +627,16 @@ namespace The_Fall_of_Blackmoor
 
                 return;
             }
+            else if (choice == "5")
+            {
+                SaveSystem.SaveGame();
+
+                Console.ReadLine();
+
+                Watchtower();
+
+                return;
+            }
             else
             {
                 Console.WriteLine("Invalid choice.");
@@ -585,8 +656,4 @@ namespace The_Fall_of_Blackmoor
             Game.MainMenu();
         }
     }
-
 }
-
-
-
