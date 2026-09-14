@@ -485,6 +485,105 @@ namespace The_Fall_of_Blackmoor
                 Woods();
             }
         }
+
+        public static void Watchtower()
+        {
+            Game.CurrentScene = "watchtower";
+
+            Console.Clear();
+
+            Console.WriteLine("RUINED WATCHTOWER");
+            Console.WriteLine();
+            Console.WriteLine("Deep in the forest you reach an abandoned watchtower.");
+            Console.WriteLine("Inside stands Lord Varrick.");
+            Console.WriteLine();
+            Console.WriteLine("He admits that he opened the gates for the enemy.");
+            Console.WriteLine();
+
+            Console.WriteLine("1. Fight Varrick");
+            Console.WriteLine("2. Expose Varrick");
+            Console.WriteLine("3. Leave Blackmoor");
+            Console.WriteLine("4. Ask for a hint");
+            Console.WriteLine();
+
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                if (Game.Inventory.Contains("Rusty Sword"))
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("You draw your sword and defeat Varrick.");
+                    Console.WriteLine();
+                    Console.WriteLine("ENDING: THE WARRIOR OF BLACKMOOR");
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("You have no weapon.");
+                    Console.WriteLine("Varrick forces you to flee.");
+                    Console.WriteLine();
+                    Console.WriteLine("ENDING: EXILE");
+                }
+            }
+            else if (choice == "2")
+            {
+                if (Game.Inventory.Contains("Royal Seal") &&
+                    Game.Inventory.Contains("Knight Trust"))
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("The knight arrives as your witness.");
+                    Console.WriteLine("With the Royal Seal, you prove Varrick's betrayal.");
+                    Console.WriteLine();
+                    Console.WriteLine("The people rise against Varrick.");
+                    Console.WriteLine("Blackmoor can be rebuilt.");
+                    Console.WriteLine();
+                    Console.WriteLine("ENDING: SAVIOR OF BLACKMOOR");
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("You accuse Varrick, but you do not have enough proof.");
+                    Console.WriteLine();
+                    Console.WriteLine("ENDING: THE TRAITOR ESCAPES");
+                }
+            }
+            else if (choice == "3")
+            {
+                Console.WriteLine();
+                Console.WriteLine("You decide Blackmoor is lost.");
+                Console.WriteLine("You disappear into the forest.");
+                Console.WriteLine();
+                Console.WriteLine("ENDING: A NEW LIFE");
+            }
+            else if (choice == "4")
+            {
+                Game.ShowHint();
+
+                Console.ReadLine();
+
+                Watchtower();
+
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
+
+                Console.ReadLine();
+
+                Watchtower();
+
+                return;
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Press Enter to return to the main menu.");
+
+            Console.ReadLine();
+
+            Game.MainMenu();
+        }
     }
 
 }
