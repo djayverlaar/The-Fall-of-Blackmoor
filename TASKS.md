@@ -12,4 +12,5 @@ Scene 8: Ruined Watchtower — verschillende eindes.DONE
 Hints + save/load — user stories afmaken.DONE
 Goal Systeem 
 
-New Scene structuur opbouwen.
+Back to main menu option DONE 
+Refactor scene structure

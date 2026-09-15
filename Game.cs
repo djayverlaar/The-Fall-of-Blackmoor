@@ -51,6 +51,43 @@ namespace The_Fall_of_Blackmoor
             }
         }
 
+        public static void ReturnToMainMenu()
+        {
+            Console.Clear();
+
+            Console.WriteLine("RETURN TO MAIN MENU");
+            Console.WriteLine();
+            Console.WriteLine("Do you want to save your game first?");
+            Console.WriteLine();
+            Console.WriteLine("1. Save and return to main menu");
+            Console.WriteLine("2. Return without saving");
+            Console.WriteLine();
+
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                SaveSystem.SaveGame();
+
+                Console.WriteLine();
+                Console.WriteLine("Press Enter to return to the main menu.");
+                Console.ReadLine();
+
+                Game.MainMenu();
+            }
+            else if (choice == "2")
+            {
+                Game.MainMenu();
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
+                Console.ReadLine();
+
+                ReturnToMainMenu();
+            }
+        }
+
         public static void ShowInstructions()
         {
             Console.Clear();
