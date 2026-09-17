@@ -4,6 +4,9 @@ namespace The_Fall_of_Blackmoor
 {
     static class Scenes
     {
+        //All scenes in simple methods in chronological order.
+        //Controls the game itself
+        //Methods have been used to keep the code organized and readable.
         public static void Cellar()
         {
             Game.CurrentScene = "cellar";

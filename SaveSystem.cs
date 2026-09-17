@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace The_Fall_of_Blackmoor
 {
+   
+    // Save Game and Load Game System
+    //Readable methods to save and load the game state, including the player's inventory and current scene.
     static class SaveSystem
     {
+        // Save the game state to a file
         public static void SaveGame()
         {
             File.WriteAllLines("inventory.txt", Game.Inventory);
@@ -34,6 +38,7 @@ namespace The_Fall_of_Blackmoor
             Game.Inventory.Clear();
             Game.Inventory.AddRange(File.ReadAllLines("inventory.txt"));
 
+            //Check if the scene.txt file exists and read the current scene from it
             Game.CurrentScene = File.ReadAllText("scene.txt");
 
             if (Game.CurrentScene == "cellar")

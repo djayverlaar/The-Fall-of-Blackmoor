@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace The_Fall_of_Blackmoor
 {
+    //Game class that manages the main menu, inventory, current scene, and game flow.
     static class Game
     {
+        //Used list for simple inventory.
         public static List<string> Inventory = new List<string>();
         public static string CurrentScene = "";
 
+        //Main start of the game.
         public static void MainMenu()
         {
             Console.Clear();
