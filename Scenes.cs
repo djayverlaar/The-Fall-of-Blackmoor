@@ -4,7 +4,6 @@ namespace The_Fall_of_Blackmoor
 {
     static class Scenes
     {
-        
         public static void Cellar()
         {
             Game.CurrentScene = "cellar";
@@ -26,7 +25,8 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("3. Leave the cellar");
             Console.WriteLine("4. Ask for a hint");
             Console.WriteLine("5. Save game");
-            Console.WriteLine("6. Main menu");
+            Console.WriteLine("6. Show current goal");
+            Console.WriteLine("7. Main menu");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -81,6 +81,13 @@ namespace The_Fall_of_Blackmoor
             }
             else if (choice == "6")
             {
+                Game.ShowGoal();
+
+                Console.ReadLine();
+                Cellar();
+            }
+            else if (choice == "7")
+            {
                 Game.ReturnToMainMenu();
                 return;
             }
@@ -114,7 +121,8 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("4. Show inventory");
             Console.WriteLine("5. Ask for a hint");
             Console.WriteLine("6. Save game");
-            Console.WriteLine("7. Main menu");
+            Console.WriteLine("7. Show current goal");
+            Console.WriteLine("8. Main menu");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -154,6 +162,13 @@ namespace The_Fall_of_Blackmoor
             }
             else if (choice == "7")
             {
+                Game.ShowGoal();
+
+                Console.ReadLine();
+                Courtyard();
+            }
+            else if (choice == "8")
+            {
                 Game.ReturnToMainMenu();
                 return;
             }
@@ -184,7 +199,8 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("3. Return to the courtyard");
             Console.WriteLine("4. Ask for a hint");
             Console.WriteLine("5. Save game");
-            Console.WriteLine("6. Main menu");
+            Console.WriteLine("6. Show current goal");
+            Console.WriteLine("7. Main menu");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -238,6 +254,13 @@ namespace The_Fall_of_Blackmoor
             }
             else if (choice == "6")
             {
+                Game.ShowGoal();
+
+                Console.ReadLine();
+                Chapel();
+            }
+            else if (choice == "7")
+            {
                 Game.ReturnToMainMenu();
                 return;
             }
@@ -267,7 +290,8 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("3. Return to the courtyard");
             Console.WriteLine("4. Ask for a hint");
             Console.WriteLine("5. Save game");
-            Console.WriteLine("6. Main menu");
+            Console.WriteLine("6. Show current goal");
+            Console.WriteLine("7. Main menu");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -319,6 +343,13 @@ namespace The_Fall_of_Blackmoor
             }
             else if (choice == "6")
             {
+                Game.ShowGoal();
+
+                Console.ReadLine();
+                GuardTower();
+            }
+            else if (choice == "7")
+            {
                 Game.ReturnToMainMenu();
                 return;
             }
@@ -350,7 +381,8 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("4. Return to the courtyard");
             Console.WriteLine("5. Ask for a hint");
             Console.WriteLine("6. Save game");
-            Console.WriteLine("7. Main menu");
+            Console.WriteLine("7. Show current goal");
+            Console.WriteLine("8. Main menu");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -405,6 +437,13 @@ namespace The_Fall_of_Blackmoor
             }
             else if (choice == "7")
             {
+                Game.ShowGoal();
+
+                Console.ReadLine();
+                Stables();
+            }
+            else if (choice == "8")
+            {
                 Game.ReturnToMainMenu();
                 return;
             }
@@ -434,7 +473,8 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("3. Return to the courtyard");
             Console.WriteLine("4. Ask for a hint");
             Console.WriteLine("5. Save game");
-            Console.WriteLine("6. Main menu");
+            Console.WriteLine("6. Show current goal");
+            Console.WriteLine("7. Main menu");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -490,6 +530,13 @@ namespace The_Fall_of_Blackmoor
             }
             else if (choice == "6")
             {
+                Game.ShowGoal();
+
+                Console.ReadLine();
+                CastleGate();
+            }
+            else if (choice == "7")
+            {
                 Game.ReturnToMainMenu();
                 return;
             }
@@ -519,7 +566,8 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("3. Ignore him");
             Console.WriteLine("4. Ask for a hint");
             Console.WriteLine("5. Save game");
-            Console.WriteLine("6. Main menu");
+            Console.WriteLine("6. Show current goal");
+            Console.WriteLine("7. Main menu");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -576,6 +624,14 @@ namespace The_Fall_of_Blackmoor
             }
             else if (choice == "6")
             {
+                Game.ShowGoal();
+
+                Console.ReadLine();
+
+                Woods();
+            }
+            else if (choice == "7")
+            {
                 Game.ReturnToMainMenu();
                 return;
             }
@@ -608,7 +664,8 @@ namespace The_Fall_of_Blackmoor
             Console.WriteLine("3. Leave Blackmoor");
             Console.WriteLine("4. Ask for a hint");
             Console.WriteLine("5. Save game");
-            Console.WriteLine("6. Main menu");
+            Console.WriteLine("6. Show current goal");
+            Console.WriteLine("7. Main menu");
             Console.WriteLine();
 
             string choice = Console.ReadLine();
@@ -682,6 +739,16 @@ namespace The_Fall_of_Blackmoor
                 return;
             }
             else if (choice == "6")
+            {
+                Game.ShowGoal();
+
+                Console.ReadLine();
+
+                Watchtower();
+
+                return;
+            }
+            else if (choice == "7")
             {
                 Game.ReturnToMainMenu();
                 return;
